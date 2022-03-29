@@ -2,9 +2,6 @@ import UserController from '../controllers/UserController';
 import auth from '../middleware/auth.middleware';
 
 export default (router) => {
-    router.get(`/api/users`, UserController.getAll);
-    router.post(`/api/user`, UserController.insert);
-    router.get(`/api/user/:id`, UserController.get);
-    router.put(`/api/user/:id`, UserController.update);
-    router.delete(`/api/user/:id`, UserController.delete);
+    router.post(`/api/users/register`, UserController.register); //user register
+    router.post(`/api/users/login`, UserController.login);  //user login
 };

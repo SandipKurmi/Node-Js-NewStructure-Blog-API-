@@ -9,6 +9,7 @@ export default (req, res, next) => {
       try {
         const decoded = verify(token, process.env.JWT_SECRET);
         req.user = decoded;
+        // console.log(req.user.id)
         next();
       } catch (err) {
         res.status(403).send({

@@ -1,40 +1,44 @@
 import mongoose, { Schema } from 'mongoose';
 import uniqueValidator from 'mongoose-unique-validator';
 
-class UserModel {
-  // eslint-disable-next-line class-methods-use-this
+class PostModel {
+  
   initSchema() {
     const schema = new Schema(
       {
-        username: {
-          type: String,
+        categoryid:{
+          type:String,
+          required: true
         },
-        email: {
+        userid:{
+          type: String,
+          required: true
+        },
+        title: {
           type: String,
           required: true,
-          unique: true,
         },
-        password: {
+        desc:{
           type: String,
-        },
+          required: true,
+        }
       },
       {
         timestamps: true,
       },
     );
     schema.plugin(uniqueValidator);
-    mongoose.model('User', schema);
+    mongoose.model('Post', schema);
   }
 
   getInstance() {
     this.initSchema();
-    return mongoose.model('User');
+    return mongoose.model('Post');
   }
 
-  // eslint-disable-next-line class-methods-use-this
   getModel() {
-    return mongoose.model('User');
+    return mongoose.model('Post');
   }
 }
 
-export default UserModel;
+export default PostModel;

@@ -17,6 +17,7 @@
   "dependencies": {
     "@sendgrid/mail": "^7.6.0",
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "core-js": "^3.8.1",
     "cors": "^2.8.5",
